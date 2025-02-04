@@ -124,7 +124,7 @@ let kgroups = [
   
   function createband(){
     let namegroup = inputname.value;
-    let tmp = {
+    let temp = {
       name: namegroup, 
       members: members,
       debut: debut,
