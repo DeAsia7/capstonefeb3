@@ -78,20 +78,24 @@
 
   <h2> What is your favorite K-Pop group?</h2>
 
+  <div class="mb-3 mt-3">
   <input placeholder="Enter group name" text="text" required></input>
   
+  <div class="mb-3 mt-3">
   <input placeholder="company they are with" text="text"></input>
 
-  <input placeholder="number of members" text="number" required></input>
+  <div class="mb-3 mt-3">
+  <input type="number" placeholder="number of members" min="1" max="50" required></input>
 
-  <input placeholder="debut date" text="text"></input>
-
-  <button onclick="createband()" class="btn btn-primary">Submit</button>
+  <div class="mb-3 mt-3">
+  <input type="date" placeholder="debut date" text="text"></input>
 
   <table class="table" id="report7members"></table>
 
   <table class="table" id="groupdebut"> </table>
   
+  <button onclick="createband()" class="btn btn-primary" aria-label="click button to submit" >Submit</button>
+
   <script src="script.js"></script>
    <table class="table" id="searchresult"></table>
 
