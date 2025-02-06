@@ -81,25 +81,28 @@ let kgroups = [
     report7members.innerHTML = tableLayout
   }
   
-  function debutdate() {
-    let tablelayout = `<tr>
-  <th>groupname</th>
-  <th>debut</th>
-  </tr>`
+  function debutdate() { 
+   
+    let tableLayout = ` <tr> 
+                               <th>groupname</th>
+                               <th>debut</th>
+        
+                             </tr>`
+
   
     for (let i = 0; i < kgroups.length; i++) {
-      tablelayout += `<tr>
+      tableLayout += `<tr>
     <td> ${kgroups[i].groupname} </td>
     <td> ${kgroups[i].debut} </td>
     </tr>`
     }
-    groupdebut.innerHTML = tablelayout
+    groupdebut.innerHTML = tableLayout
   }
   
-  
+  document.getElementById("hellokitty").addEventListener("click", getsearchdata);
   function getsearchdata() {
-  
-    let namegroup = inputname.value
+
+    let namegroup = inputname.value;
   
     let tablelayout = `<tr>
     <th>groupname</th>
@@ -122,9 +125,14 @@ let kgroups = [
   }
   }
   
-  function createband(){
+  function createband(){ 
+    
     let namegroup = inputname.value;
-    let temp = {
+    let members = inputmembers.value;
+    let debut = inputdebut.value;
+    let company = inputcompany.value;
+
+    let tmp = {
       name: namegroup, 
       members: members,
       debut: debut,
