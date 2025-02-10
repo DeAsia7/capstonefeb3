@@ -18,6 +18,22 @@
       background-color: DarkSalmon;
       color: white;
     }
+
+    h1 {
+      text-align: center;
+      padding: 3px;
+      background-color: DarkSalmon;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      padding: 3px;
+      background-color: DarkSalmon;
+      color: white;
+    }
+
+
   </style>
 
 </head>
@@ -82,9 +98,23 @@
   <input placeholder="Enter group name" id="inputname" text="text" required></input>
   
   <div class="mb-3 mt-3">
-  <input placeholder="company they are with" id="inputcompany" text="text" required></input>
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="inputname">
+      Select Company They Are With
+    </button>
+    <ul class="dropdown-menu">
+      <li><span class="dropdown-item-text">YG Entertainment</span></li>
+      <li><span class="dropdown-item-text">JYP Entertainment</span></li>
+      <li><span class="dropdown-item-text">SM Entertainment</span></li>
+      <li><span class="dropdown-item-text">Big Hit Entertainment</span></li>
+      <li><span class="dropdown-item-text">Cube Entertainment</span></li>
+      <li><span class="dropdown-item-text">Rainbow Bridge world entertainment</span></li>
+      <li><span class="dropdown-item-text">Starship Entertainment</span></li>
+      <li><span class="dropdown-item-text">KQ Entertainment</span></li>
+    </ul>
+  </div>
 
   <div class="mb-3 mt-3">
+
   <input type="number" placeholder="number of members" min="1" max="50" id="inputmembers" required></input>
 
   <div class="mb-3 mt-3">
