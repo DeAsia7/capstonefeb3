@@ -42,7 +42,7 @@
 
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)">K-POP</a>
+      <a class="navbar-brand" href="javascript:void(0)">🎵𝘒-𝘗𝘰𝘱🎶</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -69,27 +69,46 @@
   </nav>
 
 
-  <h1>Welcome to the world of K-Pop</h1>
+  <h1>Welcome to the world of ♡‧₊˚ K-POP ⟡˚ ༘ * 🫰🏼</h1>
+
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+  </div>
 
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://imgmedia.larepublica.pe/640x371/larepublica/migration/images/DKSY5LRG3VBPJCDVSZPNY3YD2Y.webp"
-          class="d-block w-100">
-      </div>
-      <div class="carousel-item active">
-        <img src="mamamoo.jpeg" class="d-block w-100"></div>
-      <div class="carousel-item">
-        <img src="ateez.jpeg" class="d-block w-100">
+          class="d-block w-100" alt="DKS">
       </div>
       <div class="carousel-item">
-        <img src="IMG_6599.jpeg" class="d-block w-100">
+        <img src="mamamoo.jpeg" class="d-block w-100" alt="mamamoo"></div>
+
+      <div class="carousel-item">
+        <img src="ateez.jpeg" class="d-block w-100" alt="ateez">
       </div>
       <div class="carousel-item">
-        <img src="IMG_6589.jpeg" class="d-block w-100"></div>
+        <img src="IMG_6599.jpeg" class="d-block w-100" alt="grouptwice">
+      </div>
+      <div class="carousel-item">
+        <img src="IMG_6589.jpeg" class="d-block w-100" alt="funnytwice"></div>
         </div>     
       </div>
     </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
 
 
   <h2> What is your favorite K-Pop group?</h2>
@@ -98,7 +117,7 @@
   <input placeholder="Enter group name" id="inputname" text="text" required></input>
   
   <div class="mb-3 mt-3">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="inputname">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="inputcompany">
       Select Company They Are With
     </button>
     <ul class="dropdown-menu">
@@ -114,11 +133,10 @@
   </div>
 
   <div class="mb-3 mt-3">
-
   <input type="number" placeholder="number of members" min="1" max="50" id="inputmembers" required></input>
 
   <div class="mb-3 mt-3">
-  <input type="date" placeholder="debut date"  id="inputdebut"  text="text" required></input>
+  <input type="date" placeholder="debut date"  id="inputdebut"  required></input>
 
   <table class="table" id="report7members"></table>
 
@@ -128,6 +146,7 @@
 
   <script src="script.js"></script>
    <table class="table" id="searchresult"></table>
+
 
 </body>
 

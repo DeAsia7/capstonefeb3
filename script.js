@@ -70,7 +70,7 @@ let kgroups = [
                              </tr>`
   
     for (let i = 0; i < kgroups.length; i++) {
-      if (kgroups[i].members == 7)
+    
   
         tableLayout += `  <tr> 
                                <td>${kgroups[i].groupname} </td>
