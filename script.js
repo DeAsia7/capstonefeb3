@@ -98,13 +98,17 @@ let kgroups = [
     }
     groupdebut.innerHTML = tableLayout
   }
-  
-  document.getElementById("hellokitty").addEventListener("click", getsearchdata);
-  function getsearchdata() {
+  // my getsearchdata function needs () , 102 
+
+  function getsearchdata(event) {
+    event.preventDefault();
+
+  console.log("helo")
 
     let namegroup = inputname.value;
-  
-    let tablelayout = `<tr>
+   // tablelayout is template string. creating a table layout
+
+    let tablelayout = `<tr>  
     <th>groupname</th>
     <th>members</th>
     <th>debut</th>
@@ -113,17 +117,20 @@ let kgroups = [
   
     for (let i = 0; i < kgroups.length; i++) {
       if (kgroups[i].groupname.includes(namegroup)) {
-  
+      // adding [i] is for arrays for kgroups when inside for loop
         tablelayout += `<tr>
         <td> ${kgroups[i].groupname} </td>
         <td> ${kgroups[i].members} </td>
         <td> ${kgroups[i].debut} </td>
         <td> ${kgroups[i].company} </td>
         </tr>`
-      }
+  
     searchresult.innerHTML = tablelayout
+      }
   }
+    searchdiv.style.display = "block"
   }
+  document.getElementById("hellokitty").addEventListener("submit", getsearchdata());
   
   function createband(){ 
     
@@ -132,6 +139,7 @@ let kgroups = [
     let debut = inputdebut.value;
     let company = inputcompany.value;
 
+    //key is left side of : and value is right side of :
     let tmp = {
       name: namegroup, 
       members: members,
@@ -139,4 +147,24 @@ let kgroups = [
       company: company
     };
     kgroups.push(tmp);
+rendercard(tmp);
+
+    console.log(kgroups);
+
+  }
+// newband is a nickname for the object tmp
+  function rendercard(newband) {
+
+const band = document.getElementById("band")
+
+let cardlayout = `
+
+  <div class="card">
+    <div class="card-header">Band Name: ${newband.name} </div>
+    <div class="card-body"># of Members: ${newband.members}</div> 
+    <div class="card-footer"> Debut Date: ${newband.debut} </div>
+  <div class="card-body">Company Name: ${newband.company} </div>
+  </div>
+</div>`
+band.innerHTML = cardlayout
   }
