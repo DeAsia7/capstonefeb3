@@ -57,13 +57,11 @@
     <div class="card" style="width:400px">
       <img src="blackpink.jpeg"  style="width:100%" usemap="#imagemap" id="blkpnkimage">
       <map name="imagemap">
-       <area shape="rect" coords="597,70,774,630" alt="jisoo" href="https://kprofiles.com/jisoo-profile/">
- <area shape="rect" coords="456,55,614,627" alt="rose" href="https://kprofiles.com/rose-blackpink-profile/">
- <area shape="rect" coords="340,52,468,622" alt="jennie" href="https://kprofiles.com/jennie-blackpink-profile/">
-   <area shape="rect" coords="157,51,290,630" alt="lisa" href="https://kprofiles.com/lisa-blackpink-profile/">    
+      <area shape="rect" coords="597,70,774,630" alt="jisoo" href="https://kprofiles.com/jisoo-profile/">
+     <area shape="rect" coords="456,55,614,627" alt="rose" href="https://kprofiles.com/rose-blackpink-profile/">
+     <area shape="rect" coords="340,52,468,622" alt="jennie" href="https://kprofiles.com/jennie-blackpink-profile/">
+    <area shape="rect" coords="157,51,290,630" alt="lisa" href="https://kprofiles.com/lisa-blackpink-profile/">    
 </map>
-
-
       <div class="card-body">
         <h4 class="card-title">BLɅϽKPIИK 🖤💗</h4>
         <p class="card-text">YG entertainment formed the girl group in 2016. The group consists of 4 members: Jisoo, Jennie, Rosé and Lisa. Their fandom is called Blink. The group debuted on August 8, 2016. </p>
@@ -73,7 +71,8 @@
     
     <div class="container mt-3">
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="twice.jpeg"  style="width:100%">
+        <img src="twice.jpeg"  style="width:100%" usemap="#imagemap" id="twiceimage">
+
         <div class="card-body">
           <h4 class="card-title">TWICE!🍭</h4>
           <p class="card-text">JYP entertainment formed the girl group in 2015. The group consists of 9 members: Nayeon, Jeongyeon, Momo, Sana, Jihyo, Mina, Dahyun, Chaeyoung, and Tzuyu. Their fandom is called Once. The group debuted on October 20, 2015. </p>
@@ -172,23 +171,24 @@
                       <br>
 
                        <footer>Created by: DeAsia </footer>
+
                        <script>
                         // Initialize the image map on the page load
                         $(document).ready(function () {
-                        // Make the image map responsive
-                        $('#blkpnkimage').mapster({
-                        fillColor: 'ff0000', // Highlight color
-                        fillOpacity: 0.5, // Highlight opacity
-                        stroke: true, // Outline around regions
-                        strokeColor: '0000ff',// Border color
-                        strokeWidth: 2, //Border thickness
-                        isSelectable: false, // Disable selecting areas
-                        scaleMap: true // Enable responsive scaling
-                        });
+                        //Make the image map responsive
+                       // $('#blkpnkimage').mapster({
+                        //fillColor: 'ff0000', // Highlight color
+                        //fillOpacity: 0.5, // Highlight opacity
+                        //stroke: true, // Outline around regions
+                        //strokeColor: '0000ff',// Border color
+                        //strokeWidth: 2, //Border thickness
+                        //isSelectable: false, // Disable selecting areas
+                        //scaleMap: true // Enable responsive scaling
+                      });
                         $(window).resize(function () {
 $('#blkpnkimage').mapster('resize', $(window).width(), 0);
 });
-                        });
+                        //});
                         </script>   
 </body>
 </html>
