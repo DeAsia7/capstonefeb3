@@ -3,7 +3,7 @@ let kgroups = [
       groupname: "BTS",
       members: 7,
       debut: "June 13, 2013",
-      company: 'Big Hit Entertainment'
+      company: "Big Hit Entertainment"
     },
     {
       groupname: "Blackpink",
@@ -101,11 +101,13 @@ let kgroups = [
   // my getsearchdata function needs () , 102 
 
   function getsearchdata(event) {
-    event.preventDefault();
 
-  console.log("helo")
+  event.preventDefault();
 
-    let namegroup = inputname.value;
+  console.log("hello")
+
+  //use spiderman is the id of the input in html we wanna access
+    let namegroup = spiderman.value;
    // tablelayout is template string. creating a table layout
 
     let tablelayout = `<tr>  
@@ -125,13 +127,16 @@ let kgroups = [
         <td> ${kgroups[i].company} </td>
         </tr>`
   
-    searchresult.innerHTML = tablelayout
-      }
+    searchresult.innerHTML = tablelayout 
+      } 
   }
     searchdiv.style.display = "block"
   }
-  document.getElementById("hellokitty").addEventListener("submit", getsearchdata());
-  
+  //use () at the end of the function for immediate trigger. no () for the same function means it will wait for the action
+  document.getElementById("hellokitty").addEventListener("submit", getsearchdata);
+
+  //form in the html triggers the submit event not the button
+
   function createband(){ 
     
     let namegroup = inputname.value;
@@ -168,3 +173,7 @@ let cardlayout = `
 </div>`
 band.innerHTML = cardlayout
   }
+
+
+  // safari browser needs to use the enter key to submit the form.
+  //search is case sensitive. 

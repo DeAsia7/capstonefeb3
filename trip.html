@@ -9,10 +9,22 @@
     crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>trip</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
 
+  <style>
+    div.container {
+      text-align: center;
+      color:rgb(14, 129, 91);
+    }
+    
+    ul.myUL {
+      display: inline-block;
+      text-align: left;
+    }
+    </style>
+
+</head>
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -21,24 +33,65 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="groupfacts.html">Group Facts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="reports.html">Reports</a>
-          </li>
+      <div class="collapse navbar-collapse" id="mynavbar" ></div>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a span class="badge bg-secondary"  href="index.html" class="nav-link" >Home
+          </a>
+        </li>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+             <a span class="badge bg-secondary"  href="groupfacts.html" class="nav-link" >Group Facts
+              </a>
+            </li>
+            <li class="nav-item">
+              <a span class="badge bg-secondary"  href="reports.html" class="nav-link" >Reports
+              </a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="trip.html">plan a trip</a>
-          </li>
+            <li class="nav-item">
+              <a span class="badge bg-secondary"  href="trip.html" class="nav-link" >plan a trip
+              </a>
+            </li>
 
+              <form class="d-flex" id="hellokitty">
+                <input class="form-control me-2" type="text" id="spiderman" placeholder="Search Database" >
+                <button class="btn btn-primary" type="submit" >Search</button>
+            
+              </form>
+          </div>
+      </div>
+  </nav>
 
-          <p>wanna plan a trip to exoerience the world of kpop. furt u need to see how the weahter is gonna be</p>
-          check weather api and insert it here
+  <h1  style="color:rgba(64, 64, 173, 0.832); text-align:center;" >🇰🇷 Lets plan a trip to South Korea 🇰🇷</h1>
+
+  <h5 style="text-align:center;">Background Information</h5>
+  <p> K-pop is korean pop music from Seoul, the heart of the kpop industry, South Korea. Gangnam district serving as the "birthplace" of the genre. The culture started in the 1990s and has grew ever since. They focus on pop music but theres other genres that hides in the background. </p>
+         
+  <h4 style="text-align:center;"> Here are cities to visit in the heart of Seoul </h4>
+  
+  <div class="container">
+    <ul class="myUL">
+      <li> Apgujeong</li>
+      <li> Myeongdong </li>
+      <li>Cheongdam</li>
+      <li> Busan</li>
+      <li> Jeju Island</li>
+    </ul>
+  </div>
+
+<h4 style="text-align:center;">Things to do in South Korea</h4>
+<ul>
+<li>K-pop dance classes: Learn choreography from your favorite K-pop songs. </li>
+  <li>Fan club events: Check for fan club gatherings or special events hosted by K-pop agencies. </li>
+ <li> K-pop related tours: Join guided tours focused on K-pop landmarks and filming locations. </li>
+  <li>Busan K-pop attractions: Visit Busan, another major city with its own K-pop scene. </li>
+  <li>Jeju Island K-pop experiences: Explore Jeju Island where some K-pop groups have filmed music videos. </li>
+<li> K star road in apgujeong</li>
+<li>shopping district in Myeongdong</li>
+</ul>
+  
+          <p.check weather api and insert it here
+          https://www.weatherbit.io/  is the website to get the api key
+        
