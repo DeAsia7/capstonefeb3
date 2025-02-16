@@ -137,7 +137,9 @@ let kgroups = [
 
   //form in the html triggers the submit event not the button
 
-  function createband(){ 
+  function createband(event){ 
+
+    event.preventDefault()
     
     let namegroup = inputname.value;
     let members = inputmembers.value;
@@ -157,6 +159,9 @@ rendercard(tmp);
     console.log(kgroups);
 
   }
+
+  document.getElementById("bandform").addEventListener("submit",createband)
+
 // newband is a nickname for the object tmp
   function rendercard(newband) {
 

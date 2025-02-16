@@ -7,6 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+<script defer src= https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>trip</title>
@@ -22,11 +23,43 @@
       display: inline-block;
       text-align: left;
     }
+
+    .search-container {
+      text-align: center;
+      margin: 20px;
+    } 
+
+    .search-container input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+    }
+
+    .search-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background: #ccc;
+    }
+
+
     </style>
 
 </head>
 
 <body>
+
+
+  
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="javascript:void(0)">🎵𝘒-𝘗𝘰𝘱🎶</a>
@@ -91,7 +124,127 @@
 <li> K star road in apgujeong</li>
 <li>shopping district in Myeongdong</li>
 </ul>
+
+<h4 style="text-align:center;">K-pop related tours</h4>
+<p>There are several K-pop tours you can take to get a better experience. they include walking tours, theme park visits, and tours of fliming locations.</p>
+  <h4 style="text-align:center;"> Walking tours</h4>
+  <p> Walking tours are a great way to see the city and learn about the history of K-pop. You can visit the Gangnam district, where many K-pop agencies are located, and see the famous K star road in apgujeong. </p>
   
-          <p.check weather api and insert it here
-          https://www.weatherbit.io/  is the website to get the api key
-        
+  <h4 style="text-align:center;"> Theme park visits</h4>
+  <p> Theme parks are a popular destination for K-pop fans. You can visit Everland, the largest theme park in South Korea, and enjoy rides, shows, and attractions. </p>
+  <p>SM TOWN: Experience the life of an artist in the vocal and dance training room, recording room, and music video studio</p>
+
+  <h4 style="text-align:center;"> Tours of filming locations</h4>
+  <p> Many K-pop music videos are filmed in South Korea. You can take a tour of filming locations and see where your favorite music videos were made. </p>
+  <p>Visit the filming locations of popular K-pop music videos, such as Gangnam Style by Psy, and see where your favorite artists have performed. </p>
+  <p>Visit the filming locations of popular K-pop dramas and see where your favorite actors have filmed. </p>
+  <p>Visit the filming locations of popular K-pop variety shows and see where your favorite idols have appeared. </p>
+  <p>Visit the filming locations of popular K-pop reality shows and see where your favorite idols have lived. </p>
+  <p>Visit the filming locations of popular K-pop concerts and see where your favorite artists have performed. </p>
+
+
+  <h1 style="text-align:center;">Finding Song Lyrics</h1>
+  <form class="d-flex" id="lyricsbutton">
+    <input class="form-control me-2" type="text" id="Song" placeholder="Enter Song" >
+    <input class="form-control me-2" type="text" id="artistinput" placeholder="Enter Artist">
+    <button class="btn btn-primary" type="submit" >Search</button>
+  
+  </form>
+
+  <h1 style="text-align:center;">Checking Weather</h1>
+  <form class="d-flex" id="weatherbutton">
+    <input class="form-control me-2" type="text" id="cityinput" placeholder="Enter City" >
+    <input class="form-control me-2" type="text" id="countryinput" placeholder="Enter Country">
+    <button class="btn btn-primary" type="submit" >Search</button>
+  
+  </form>
+  
+  <div id=weatherdiv></div>
+  </div>
+  <script>
+
+    async function getWeather(event) {
+
+      event.preventDefault();
+    
+      const city = document.getElementById("cityinput").value;
+    const country = document.getElementById("countryinput").value;
+    
+    
+        const formattedCity = encodeURIComponent(city);
+        const formattedCountry = encodeURIComponent(country);
+    const APIkey = "b26f4c6f1777421b985b7848d83823e1";
+    
+     //use the ${} to insert the variables into the string
+    
+     try{
+    
+     
+      const response = await axios.get(`https://api.weatherbit.io/v2.0/current?&city=${formattedCity}&country=${formattedCountry}&key=${APIkey}`);
+    
+    const data = response.data.data;
+    
+    const City_name = data[0].city_name;
+    const Sunrise = data[0].sunrise;
+    const Sunset = data[0].sunset;
+    const temp = data[0].temp;
+    const weather = data[0].weather.description;
+    
+    let cardlayout = `
+    
+      <div class="card">
+        <div class="card-header">City Name: ${City_name} </div>
+        <div class="card-body">Country Name: ${country} <br> Sunrise Time: ${Sunrise}<br> Sunset Time: ${Sunset} </div> 
+        <div class="card-footer"> Temp: ${temp} <br> Weather: ${weather} </div>
+      </div>
+    </div>`
+    
+    weatherdiv.innerHTML = cardlayout
+     } catch (error) {
+     console.log(error);
+    weatherdiv.innerHTML = `<div class="alert alert-warning">
+      <strong>Check Information</strong> no results were found.
+    </div>`
+    }
+    }
+    document.getElementById("weatherbutton").addEventListener("submit",getWeather);
+    
+    
+    
+    
+     async function getLyrics(event) {
+
+      event.preventDefault();
+
+     // this is for the user to input song and artist and capture the value
+      const artist = document.getElementById("artistinput").value;
+      const song = document.getElementById("songinput").value;
+
+      //this is for displaying the response
+      const divSong = document.getElementById('Song');
+  
+
+        const formattedArtist = encodeURIComponent(artist);
+        const formattedSong = encodeURIComponent(song);
+
+        try{
+    
+       const response = await axios.get(`https://api.lyrics.ovh/v1/${formattedArtist}/${formattedSong}`);
+       const data = response.data;
+       const lyrics = response.data.lyrics;
+       divSong.innerText = lyrics;
+    
+    } catch (error) {
+    
+      divSong.innerText = "Sorry, no lyrics found.";
+      console.error("Error fetching lyrics:", error);
+    
+    }
+    }
+    document.getElementById("lyricsbutton").addEventListener("submit",getLyrics);
+    
+      </script>
+
+
+  </body>
+  </html>

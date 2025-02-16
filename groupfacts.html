@@ -171,24 +171,26 @@
                       <br>
 
                        <footer>Created by: DeAsia </footer>
-
+                       
                        <script>
-                        // Initialize the image map on the page load
                         $(document).ready(function () {
-                        //Make the image map responsive
-                       // $('#blkpnkimage').mapster({
-                        //fillColor: 'ff0000', // Highlight color
-                        //fillOpacity: 0.5, // Highlight opacity
-                        //stroke: true, // Outline around regions
-                        //strokeColor: '0000ff',// Border color
-                        //strokeWidth: 2, //Border thickness
-                        //isSelectable: false, // Disable selecting areas
-                        //scaleMap: true // Enable responsive scaling
-                      });
-                        $(window).resize(function () {
-$('#blkpnkimage').mapster('resize', $(window).width(), 0);
-});
-                        //});
-                        </script>   
+                          $('#blkpnkimage').mapster({
+                            scaleMap: true
+                          });
+
+                          $('area').on('click', function (event) {
+                            event.preventDefault(); 
+                            var href = $(this).attr('href'); 
+                            if (href) {
+                              window.open(href, '_blank');
+                            }
+                          });
+
+                          $(window).resize(function () {
+                            $('#blkpnkimage').mapster('resize', $(window).width(), 0);
+                          });
+                        });
+                      </script>
+                      
 </body>
 </html>

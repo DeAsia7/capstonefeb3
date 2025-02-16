@@ -207,8 +207,16 @@
   <h2> What is your favorite K-Pop group?</h2>
 
   <div class="mb-3 mt-3">
-    <h4>K-pop Band</h4>
-  <input placeholder = "Enter group name" id="inputname" text="text" required></input>
+    <h4>K-pop Band</h4> 
+
+    <form class="needs-validation" novalidate id="bandform">
+    <div class="col-md-4">
+      <label for="inputname" aria-label="Enter name" class="form-label"></label>
+  <input class="form-control" placeholder = "Enter group name" id="inputname" text="text" required>
+  <div class="invalid-feedback">
+    Please select a valid name.
+  </div>
+  </div>
 
   
   <div class="mb-3 mt-3"> 
@@ -227,16 +235,27 @@
 
   <div class="mb-3 mt-3">
     <h4>Number of Members</h4>
-    <label for="inputmembers"></label>
-  <input type="number"  min="1" max="50" id="inputmembers" required></input>
+    <div class="col-md-4">
+    <label for="inputmembers" aria-label="Enter number of memebers" class="form-label"></label>
+  <input class= "form-control" type="number"  min="1" max="50" id="inputmembers" required>
+  <div class="invalid-feedback">
+    Please select a valid number.
+  </div>
+
+
+
   
   <div class="mb-3 mt-3">
     <h4>Debut Date</h4>
-    <label for="inputdebut"></label>
-    <input type="date" id="inputdebut" required></input>
+    <div class="col-md-4">
+    <label for="inputdebut" aria-label="enter date" class="form-label"></label>
+    <input class="form-control" type="date" id="inputdebut" required>
+    <div class="invalid-feedback">
+      Please select a valid date.
   </div>
 
-  <button class="button" style="vertical-align:middle" onclick= createband() aria-label="click button to submit"><span>submit</span></button>
+  <button type="submit" style="vertical-align:middle" aria-label="click button to submit"><span>submit</span></button>
+</form>
 
   <div id="band"></div>
 
