@@ -145,11 +145,12 @@
 
   <h1 style="text-align:center;">Finding Song Lyrics</h1>
   <form class="d-flex" id="lyricsbutton">
-    <input class="form-control me-2" type="text" id="Song" placeholder="Enter Song" >
-    <input class="form-control me-2" type="text" id="artistinput" placeholder="Enter Artist">
+    <input class="form-control me-2" type="text" id="artistinput" placeholder="Enter Artist" >
+    <input class="form-control me-2" type="text" id="songinput" placeholder="Enter Song">
     <button class="btn btn-primary" type="submit" >Search</button>
-  
   </form>
+
+<div id=Songdiv></div>
 
   <h1 style="text-align:center;">Checking Weather</h1>
   <form class="d-flex" id="weatherbutton">
@@ -220,10 +221,6 @@
       const artist = document.getElementById("artistinput").value;
       const song = document.getElementById("songinput").value;
 
-      //this is for displaying the response
-      const divSong = document.getElementById('Song');
-  
-
         const formattedArtist = encodeURIComponent(artist);
         const formattedSong = encodeURIComponent(song);
 
@@ -234,8 +231,9 @@
        const lyrics = response.data.lyrics;
     
     } catch (error) {
-    
-      divSong.innerText = "Sorry, no lyrics found.";
+      songdiv.innerHTML = `<div class="alert alert-warning">
+      <strong>Check Information</strong> no results were found.
+    </div>`
       console.error("Error fetching lyrics:", error);
     
     }
