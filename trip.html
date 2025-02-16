@@ -232,7 +232,6 @@
        const response = await axios.get(`https://api.lyrics.ovh/v1/${formattedArtist}/${formattedSong}`);
        const data = response.data;
        const lyrics = response.data.lyrics;
-       divSong.innerText = lyrics;
     
     } catch (error) {
     
