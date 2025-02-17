@@ -46,6 +46,7 @@
       padding: 20px;
       width: auto;
       height: auto;
+
     }
 
     #inputcompany {
@@ -221,7 +222,7 @@
   
   <div class="mb-3 mt-3"> 
     <h4>Select Company</h4>
- <select id="inputcompany">
+ <select class="form-control" id="inputcompany">
      <option>YG Entertainment</option>
      <option>JYP Entertainment</option>
      <option>SM Entertainment</option>
@@ -268,6 +269,29 @@
   
    
    <script src="script.js"></script>
+
+
+   <script>
+    // Bootstrap form validation
+    (function () {
+      'use strict';
+  
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation');
+  
+      // Loop over them and prevent submission if invalid
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+  
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
 
 
 
